@@ -27,5 +27,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           fork_branch=$(git rev-parse --abbrev-ref HEAD)
           git fetch origin ${fork_branch}
-          git merge upstream/${fork_branch}
+          git merge upstream/${fork_branch} --allow-unrelated-histories
           git push https://x-access-token:$GH_TOKEN@github.com/StrugglingPig/claude-code-source-code.git HEAD:${fork_branch} --force
